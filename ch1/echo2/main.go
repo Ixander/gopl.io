@@ -16,7 +16,7 @@ func main() {
 	s, sep := "", ""
 	for i, arg := range os.Args[1:] {
 		s += sep + arg
-		sep = "+"
+		sep = " "
 		fmt.Println(i)
 	}
 	fmt.Println(s)
