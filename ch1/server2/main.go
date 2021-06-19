@@ -20,6 +20,7 @@ var count int
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/count", counter)
+	http.HandleFunc("/test", handlerTest)
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 
@@ -36,6 +37,13 @@ func counter(w http.ResponseWriter, r *http.Request) {
 	mu.Lock()
 	fmt.Fprintf(w, "Count %d\n", count)
 	mu.Unlock()
+}
+
+func handlerTest(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "%s", w)
+
+	//fmt.Fprintf(w, "URL.Path = %q\n", "TEST")
+	fmt.Fprintf(w, "\nURL.Path = %q\n", "TEST")
 }
 
 //!-
