@@ -13,7 +13,6 @@ import (
 	"strconv"
 
 	"GoBook/ch2/tempconv"
-	"gopl.io/ch2/tempconv"
 )
 
 func main() {
