@@ -25,6 +25,14 @@ func main() {
 	for i := 1; i < len(os.Args); i++ {
 		fmt.Printf("  %s\n", comma(os.Args[i]))
 	}
+
+	s := "abc"
+	fmt.Println(s)
+	b := []byte(s)
+	fmt.Println(b)
+	s2 := string(b)
+	fmt.Println(s2)
+
 }
 
 //!+
