@@ -23,6 +23,7 @@ func main() {
 
 	//!+slice
 	s := []int{0, 1, 2, 3, 4, 5}
+	fmt.Println(s[3])
 	// Rotate s left by two positions.
 	reverse(s[:2])
 	reverse(s[2:])
