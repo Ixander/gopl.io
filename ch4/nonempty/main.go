@@ -28,8 +28,10 @@ func nonempty(strings []string) []string {
 func main() {
 	//!+main
 	data := []string{"one", "", "three"}
-	fmt.Printf("%q\n", nonempty(data)) // `["one" "three"]`
-	fmt.Printf("%q\n", data)           // `["one" "three" "three"]`
+	fmt.Println(data)
+	data = nonempty(data)
+	//fmt.Printf("%q\n", nonempty(data)) // `["one" "three"]`
+	fmt.Printf("%q\n", data) // `["one" "three" "three"]`
 	//!-main
 }
 
