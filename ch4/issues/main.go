@@ -8,11 +8,10 @@
 package main
 
 import (
+	"GoBook/ch4/github"
 	"fmt"
 	"log"
 	"os"
-
-	"gopl.io/ch4/github"
 )
 
 //!+

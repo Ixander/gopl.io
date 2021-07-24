@@ -7,10 +7,9 @@
 package main
 
 import (
+	"GoBook/ch4/github"
 	"log"
 	"os"
-
-	"gopl.io/ch4/github"
 )
 
 //!+template

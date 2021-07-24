@@ -33,6 +33,8 @@ var movies = []Movie{
 //!-
 
 func main() {
+	//fmt.Println(movies+ "\n")
+	fmt.Printf("movies: %v\n\n", movies)
 	{
 		//!+Marshal
 		data, err := json.Marshal(movies)
@@ -51,9 +53,14 @@ func main() {
 		}
 		fmt.Printf("%s\n", data)
 		//!-MarshalIndent
-
+		//panic("panic")
 		//!+Unmarshal
-		var titles []struct{ Title string }
+		var titles []struct {
+			Title  string
+			Year   int `json:"released"`
+			Actors []string
+		}
+
 		if err := json.Unmarshal(data, &titles); err != nil {
 			log.Fatalf("JSON unmarshaling failed: %s", err)
 		}

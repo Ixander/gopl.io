@@ -7,12 +7,11 @@
 package main
 
 import (
+	"GoBook/ch4/github"
 	"log"
 	"os"
 	"text/template"
 	"time"
-
-	"gopl.io/ch4/github"
 )
 
 //!+template
@@ -34,9 +33,7 @@ func daysAgo(t time.Time) int {
 //!-daysAgo
 
 //!+exec
-var report = template.Must(template.New("issuelist").
-	Funcs(template.FuncMap{"daysAgo": daysAgo}).
-	Parse(templ))
+var report = template.Must(template.New("issuelist").Funcs(template.FuncMap{"daysAgo": daysAgo}).Parse(templ))
 
 func main() {
 	result, err := github.SearchIssues(os.Args[1:])
