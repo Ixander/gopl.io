@@ -23,6 +23,7 @@ func main() {
 	for _, link := range visit(nil, doc) {
 		fmt.Println(link)
 	}
+
 }
 
 //!-main
