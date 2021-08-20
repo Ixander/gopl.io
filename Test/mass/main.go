@@ -6,6 +6,10 @@ func main() {
 	//r := [...]int{5: -1}
 	//fmt.Println(r)
 
+	slice := make([]int, 4)
+
+	fmt.Println(slice)
+
 	var x = [32]byte{5, 6}
 	a := 5
 	fmt.Println(x, a)
