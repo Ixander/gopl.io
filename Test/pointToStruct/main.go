@@ -9,6 +9,7 @@ type employee struct {
 	salary int // зарплата
 }
 
+//конструктор
 func newEmployee(name, sex string, age, salary int) employee {
 	return employee{
 		name:   name,
