@@ -5,7 +5,7 @@
 
 // Package geometry defines simple types for plane geometry.
 //!+point
-package geometry
+package geo
 
 import "math"
 
