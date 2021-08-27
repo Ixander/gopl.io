@@ -46,8 +46,11 @@ func main() {
 	fmt.Println(m.Get("item")) // "1"      (first value)
 	fmt.Println(m["item"])     // "[1 2]"  (direct map access)
 
-	m = nil
+	//m = nil
 	fmt.Println(m.Get("item")) // ""
 	m.Add("item", "3")         // panic: assignment to entry in nil map
+
+	fmt.Println(m["item"])
+
 	//!-main
 }
