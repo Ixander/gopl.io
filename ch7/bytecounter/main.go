@@ -15,7 +15,22 @@ import (
 type ByteCounter int
 
 func (c *ByteCounter) Write(p []byte) (int, error) {
+
+	x := ByteCounter(len(p))
+	fmt.Printf("x- %v\n", x)
+
+	var y ByteCounter
+
+	y += ByteCounter(len(p))
+	fmt.Printf("y- %v\n", y)
+
+	// c - вказівник на тип ByteCounter
+	fmt.Printf("*c- %v\n", *c)
+	//*c = *c + ByteCounter(len(p))
 	*c += ByteCounter(len(p)) // convert int to ByteCounter
+
+	// *c - значення яке лежить за вказівником с
+	//fmt.Println(*c)
 	return len(p), nil
 }
 
@@ -24,12 +39,21 @@ func (c *ByteCounter) Write(p []byte) (int, error) {
 func main() {
 	//!+main
 	var c ByteCounter
-	c.Write([]byte("hello"))
+	_, err := c.Write([]byte("hello"))
+	if err != nil {
+		return
+	}
 	fmt.Println(c) // "5", = len("hello")
 
 	c = 0 // reset the counter
 	var name = "Dolly"
-	fmt.Fprintf(&c, "hello, %s", name)
+	res, err := fmt.Fprintf(&c, "hello, %s", name)
+
+	if err != nil {
+		return
+	}
+
+	fmt.Println(res)
 	fmt.Println(c) // "12", = len("hello, Dolly")
 	//!-main
 }
