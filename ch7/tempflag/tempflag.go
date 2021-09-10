@@ -10,15 +10,17 @@ import (
 	"flag"
 	"fmt"
 
-	"gopl.io/ch7/tempconv"
+	"GoBook/ch7/tempconv"
 )
 
 //!+
 var temp = tempconv.CelsiusFlag("temp", 20.0, "the temperature")
+var test = flag.String("test", "not set", "test")
 
 func main() {
 	flag.Parse()
 	fmt.Println(*temp)
+	fmt.Println(*test)
 }
 
 //!-
