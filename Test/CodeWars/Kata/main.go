@@ -12,6 +12,9 @@ func main() {
 	s = "ABC"
 	fmt.Println(s.IsUpperCase())
 	fmt.Println(Multiple3And5(12555))
+	fmt.Println("---------------------------------")
+	fmt.Println(SpinWords("This is a Sparta"))
+
 }
 
 func (s MyString) IsUpperCase() bool {
