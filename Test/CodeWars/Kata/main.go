@@ -19,7 +19,7 @@ func main() {
 	//fmt.Println(DigitalRoot(2569458888455488))
 	//fmt.Println(ArrayDiff([]int{1, 2, 2, 2, 2, 2, 2, 2}, []int{2}))
 	fmt.Println("---------------------------------")
-	fmt.Println(Going(26))
+	fmt.Println(Going(10110))
 
 }
 

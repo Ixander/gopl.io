@@ -1,37 +1,31 @@
 package main
 
 import (
-	"fmt"
 	"math"
+	"math/big"
 )
 
-func Going(n int64) float64 {
-	fmt.Println(factorial(n))
-	fmt.Println(sumFactorial(n))
-	//fmt.Println(float64(1) / float64(factorial(n)))
-
-	//fmt.Println((float64(1) / float64(factorial(n))) * float64(sumFactorial(n)))
-
-	res := (float64(1) / float64(factorial(n))) * float64(sumFactorial(n))
-
-	return math.Floor(res*1000000) / 1000000
+func Going(n int) float64 {
+	res := big.NewFloat(1.0)
+	fact := factorial(n)
+	sum := sumFactorial(n)
+	res = res.Quo(sum, fact)
+	resFloat, _ := res.Float64()
+	return math.Floor(resFloat*1e6) / 1e6
 }
 
-func factorial(n int64) int64 {
-	if n == 0 {
-		return 1
+func factorial(n int) *big.Float {
+	factVal := big.NewFloat(1.0)
+	for i := 1; i <= n; i++ {
+		factVal = factVal.Mul(factVal, big.NewFloat(float64(i)))
 	}
-	if n-1 < 1 {
-		return n
-	}
-	return n * factorial(n-1)
+	return factVal
 }
 
-func sumFactorial(n int64) int64 {
-	var sum, j int64
-	j = 1
-	for i := j; i <= n; i++ {
-		sum += factorial(i)
+func sumFactorial(n int) *big.Float {
+	sum := big.NewFloat(0.0)
+	for i := 1; i <= n; i++ {
+		sum = sum.Add(sum, factorial(i))
 	}
 	return sum
 }
