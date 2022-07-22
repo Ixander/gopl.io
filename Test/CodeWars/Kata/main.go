@@ -18,9 +18,14 @@ func main() {
 	//fmt.Println(FindOdd(massF))
 	//fmt.Println(DigitalRoot(2569458888455488))
 	//fmt.Println(ArrayDiff([]int{1, 2, 2, 2, 2, 2, 2, 2}, []int{2}))
-	fmt.Println("---------------------------------")
-	fmt.Println(Going(10110))
 
+	//fmt.Println(Going(10110))
+	fmt.Println("---------------------------------")
+	//fmt.Println(Buddy(48, 50))
+	//res := SumOfProperDivisors(75)
+	//fmt.Println(res)
+	//fmt.Println(SumOfProperDivisors(res))
+	fmt.Println(SumPropDiv(48))
 }
 
 func (s MyString) IsUpperCase() bool {
