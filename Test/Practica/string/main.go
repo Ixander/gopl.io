@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 
@@ -18,5 +21,16 @@ func main() {
 	var str string
 	str = "Hello, world!"
 	println(string(str[0])) //72
+
+	now := time.Now()
+
+	fmt.Println(now)
+	//ver = v0.0.1 id = 0 pi = 3.1415.
+	// определите переменные ver, id, pi
+	ver := "v0.0.1"
+	id := 0
+	pi := 3.1415
+
+	fmt.Println("ver =", ver, "id =", id, "pi =", pi)
 
 }
