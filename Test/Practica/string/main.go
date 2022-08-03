@@ -1,36 +1,34 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"time"
+	"os"
 )
 
 func main() {
+	// Получаем читателя пользовательского ввода
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Interaction counter")
 
-	var r rune = 161
-	text := "Hello"
+	cnt := 0
+	for {
+		fmt.Print("-> ")
+		// Считываем введённую пользователем строку. Программа ждёт, пока пользователь введёт строку
+		_, err := reader.ReadString('\n')
+		if err != nil {
+			panic(err)
+		}
 
-	text1 := `Hello
-			Sasha
-		How are you`
+		f(&cnt)
 
-	fmt.Println(text)
-	fmt.Println(text1)
-	fmt.Println(string(r))
-
-	var str string
-	str = "Hello, world!"
-	println(string(str[0])) //72
-
-	now := time.Now()
-
-	fmt.Println(now)
-	//ver = v0.0.1 id = 0 pi = 3.1415.
-	// определите переменные ver, id, pi
-	ver := "v0.0.1"
-	id := 0
-	pi := 3.1415
-
-	fmt.Println("ver =", ver, "id =", id, "pi =", pi)
-
+		fmt.Printf("User input %d lines\n", cnt)
+	}
 }
+
+func f(p *int) {
+	*p = *p + 1
+}
+
+//Перед вами неполный код программы, которая считает, сколько строк пользователь ввёл в консоль,
+//и после ввода каждой новой строки выводит общее количество на экран. Напишите реализацию функции f.
