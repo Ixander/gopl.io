@@ -112,7 +112,7 @@ func main() {
 	method := "POST"
 
 	payload := strings.NewReader(`{
-    "size": "10",
+    "size": "3",
     "from": "0",
     "sort": [
         {
@@ -130,7 +130,7 @@ func main() {
                         "should": [
                             {
                                 "match_phrase": {
-                                    "openvpn_cn": "643107D81220"
+                                    "openvpn_cn": "` + "643107D81220" + `"
                                 }
                             }
                         ],
